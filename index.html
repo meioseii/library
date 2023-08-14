@@ -10,10 +10,14 @@
 <body>
     <dialog id="form-dialog">
         <form method="dialog">
-            <h1>Add New Book</h1>
+            <h2>Add New Book</h2>
             <input type="text" placeholder="Title" required>
             <input type="text" placeholder="Author" required>
             <input type="number" placeholder="Number of Pages" name="book-pages" id="book-pages" required>
+            <div class="checkbox">
+                <label for="read-status">Have you read it?</label>
+                <input type="checkbox" name="read-status" id="read-checkbox">
+            </div>
             <div class="dialog-buttons">
                 <button class="cancel">Cancel</button>
                 <button class="submit">Submit</button>
@@ -26,8 +30,8 @@
 
     </nav>
 
-    <div class="add-book-container">
-        <button class="add-book">+ Add Book</button>
+    <div class="new-book-container">
+        <button class="new-book">+ New Book</button>
     </div>
 
     <div class="card-container"></div>

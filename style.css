@@ -23,6 +23,60 @@ dialog {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: .5rem;
+    width: 20%;
+}
+
+dialog form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+dialog form h2 {
+    text-align: center;
+}
+
+dialog form input[type="text"],
+dialog form input[type="number"] {
+    padding: .25rem .5rem;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 1px solid #d4d4d8;
+
+}
+
+dialog input[type="text"]:focus,
+dialog input[type="number"]:focus {
+    outline: none;
+}
+
+dialog form .checkbox {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+dialog form .dialog-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: .5rem;
+}
+
+dialog form button {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: .25rem;
+    padding: .5rem .75rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+dialog form button:hover {
+    background-color: var(--accent);
+    border: 1px solid var(--accent);
 }
 
 nav {
@@ -35,14 +89,14 @@ nav h1 {
     font-size: 2.5rem;
 }
 
-.add-book-container {
+.new-book-container {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem;
 }
 
-.add-book-container button {
+.new-book-container button {
     padding: .75rem 1rem;
     font-size: 1.5rem;
     font-weight: 600;
@@ -53,11 +107,11 @@ nav h1 {
     transition: 0.3s ease-in-out;
 }
 
-.add-book-container button:hover {
+.new-book-container button:hover {
     background-color: var(--accent);
 }
 
-.add-book-container button:focus {
+.new-book-container button:focus {
     outline: none;
 }
 
