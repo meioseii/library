@@ -7,18 +7,58 @@
     outline: px solid black;
 }
 
+:root {
+    --primary-color: #ffe5ec;
+    --secondary-color: #ffc2d1;
+    --accent: #ffb3c6;
+}
+
 body {
     height: 100vh;
+    background-color: var(--primary-color);
+}
+
+dialog {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 nav {
     padding: 1rem 2rem;
     box-shadow: 0 4px 5px -2px rgb(0, 0, 0, 0.2);
-    margin-bottom: 1rem;
+    background-color: var(--secondary-color);
 }
 
 nav h1 {
     font-size: 2.5rem;
+}
+
+.add-book-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.add-book-container button {
+    padding: .75rem 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background-color: transparent;
+    border: none;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.add-book-container button:hover {
+    background-color: var(--accent);
+}
+
+.add-book-container button:focus {
+    outline: none;
 }
 
 
