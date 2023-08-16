@@ -4,7 +4,7 @@
     font-family: 'Bricolage Grotesque', sans-serif;
     padding: 0px;
     margin: 0px;
-    outline: px solid black;
+    border: px solid black;
 }
 
 :root {
@@ -14,7 +14,6 @@
 }
 
 body {
-    height: 100vh;
     background-color: var(--primary-color);
 }
 
@@ -115,5 +114,58 @@ nav h1 {
     outline: none;
 }
 
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-content: center;
+    gap: 1.5rem;
+    padding: 0rem 1.5rem 1.5rem 1.5rem;
+}
 
+.card {
+    background-color: rgba(255, 255, 255, 1);
+    filter: drop-shadow(0 0 .15rem rgb(0, 0, 0, 0.3));
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: .5rem;
+    word-wrap: break-word;
+}
+
+.card > .title > p {
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+.card > .author > p {
+    font-size: 1.25rem;
+}
+
+.card .remove-button {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card .status {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+}
+
+.card .remove-button button {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: .25rem;
+    padding: .5rem .75rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.card .remove-button button:hover {
+    background-color: var(--accent);
+    border: 1px solid var(--accent);
+}
 

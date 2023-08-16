@@ -46,27 +46,24 @@ function insertCards() {
         myLibrary.forEach((book) => {
             cards += `<div class="card">
                         <div class="title">
-                            <h4>Title</h4>
                             <p>${book.title}</p>
                         </div>
                         <div class="author">
-                            <h4>Author</h4>
-                            <p>${book.author}</p>
+                            <p>by ${book.author}</p>
                         </div>
                         <div class="pages">
-                            <h4>Pages</h4>
-                            <p>${book.pages}</p>
-                        </div>
-                        <div class="status">
-                            <label for="read-status">Have you read it?</label>
-                            <input id="book-status" type="checkbox" ${book.status && "checked"}>
+                            <p>${book.pages} pages</p>
                         </div>
                         <div class="remove-button">
+                            <div class="status">
+                                <label for="read-status">Have you read it?</label>
+                                <input id="book-status" type="checkbox" ${book.status && "checked"}>
+                            </div>
                             <button>Remove</button>
                         </div>
                     </div>`
         });
     };
-    cardContainer.innerHTML = cards || `<span>No elements.</span>`
+    cardContainer.innerHTML = cards;
 }
 // make checkbox dynamic; style the card container;
