@@ -5,6 +5,8 @@ const openDialogBtn = document.querySelector('.new-book');
 const addBook = document.querySelector('.submit');
 const cardContainer = document.querySelector('.card-container');
 
+/* console.log(document.getElementById("").parentElement.nodeName); */
+
 const myLibrary = [];
 
 openDialogBtn.addEventListener('click', () => {
@@ -20,9 +22,15 @@ closeDialogBtn.addEventListener('click', (event) => {
 addBook.addEventListener('click', () => {
     addBookToLibrary();
     insertCards();
+    console.log()
 });
 
+function setStatus(book, newStatus) {
+    book.status = newStatus;
+}
+
 function Book(title, author, pages, status) {
+    this.id = Date.now(),
     this.title = title,
     this.author = author,
     this.pages = pages,
@@ -37,14 +45,14 @@ function addBookToLibrary() {
 
     const book = new Book(bookTitle, bookAuthor, bookPages, bookStatus);
 
-    bookTitle && bookAuthor && bookPages !== "" ? myLibrary.push(book) : null;
+    bookTitle !== "" && bookAuthor !== "" && bookPages !== "" ? myLibrary.push(book) : null;
 }
 
 function insertCards() {
     let cards = "";
     if (myLibrary) {
-        myLibrary.forEach((book) => {
-            cards += `<div class="card">
+        myLibrary.forEach((book, index) => {
+            cards += `<div class="card" id="active">
                         <div class="title">
                             <p>${book.title}</p>
                         </div>
@@ -56,8 +64,8 @@ function insertCards() {
                         </div>
                         <div class="remove-button">
                             <div class="status">
-                                <label for="read-status">Have you read it?</label>
-                                <input id="book-status" type="checkbox" ${book.status && "checked"}>
+                                <label>Have you read it?</label>
+                                <input id="${book.id}" onchange="setStatus(myLibrary[${index}], this.checked)" type="checkbox" ${book.status ? "checked" : ""}>
                             </div>
                             <button>Remove</button>
                         </div>
