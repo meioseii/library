@@ -116,7 +116,7 @@ nav h1 {
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     align-content: center;
     gap: 1.5rem;
     padding: 0rem 1.5rem 1.5rem 1.5rem;
