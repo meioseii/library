@@ -8,9 +8,9 @@
 }
 
 :root {
-    --primary-color: #ffe5ec;
-    --secondary-color: #ffc2d1;
-    --accent: #ffb3c6;
+    --primary-color: #f0f9ff;
+    --secondary-color: #bae6fd;
+    --accent: #7dd3fc;
 }
 
 body {
@@ -116,7 +116,7 @@ nav h1 {
 
 .card-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     align-content: center;
     gap: 1.5rem;
     padding: 0rem 1.5rem 1.5rem 1.5rem;
@@ -131,6 +131,8 @@ nav h1 {
     padding: 1rem;
     border-radius: .5rem;
     word-wrap: break-word;
+    transition: 0.25s ease-in-out;
+
 }
 
 .card > .title > p {
@@ -157,29 +159,29 @@ nav h1 {
 }
 
 .card .remove-button button {
-    font-weight: 600;
-    background-color: var(--secondary-color);
-    border: 1px solid var(--secondary-color);
+    color: #ffffff;
+    background-color: #f87171;
+    border: 1px solid #f87171;
     border-radius: .25rem;
     padding: .5rem .75rem;
     cursor: pointer;
-    transition: 0.3s ease-in-out;
+    transition: 0.25s ease-in-out;
 }
 
 .card .remove-button button:hover {
-    background-color: var(--accent);
-    border: 1px solid var(--accent);
+    background-color: #ef4444;
+    border: 1px solid #ef4444;
 }
 
 #active {
-    background-color: #a7e8bd;
+    transition: 0.25s ease-in-out;
+    background-color: #a7f3d0;
 }
 
-#active button {
+/* #active button {
     color: #fff;
-    font-weight: 600;
-    background-color: #FF6962;
-    border: 1px solid #FF6962;
+    background-color: #ef4444;
+    border: 1px solid #ef4444;
     border-radius: .25rem;
     padding: .5rem .75rem;
     cursor: pointer;
@@ -189,4 +191,4 @@ nav h1 {
 #active button:hover {
     background-color: #FF8989;
     border: 1px solid #FF8989;
-}
+} */
