@@ -7,7 +7,7 @@ const cardContainer = document.querySelector('.card-container');
 
 /* console.log(document.getElementById("").parentElement.nodeName); */
 
-const myLibrary = [];
+let myLibrary = [];
 
 openDialogBtn.addEventListener('click', () => {
     form.reset();
@@ -24,18 +24,6 @@ addBook.addEventListener('click', () => {
     insertCards();
     console.log()
 });
-
-function setStatus(book, newStatus) {
-    book.status = newStatus;
-
-    let cardElement = document.getElementById(`${book.id}`).closest('div.card')
-
-    if (newStatus) {
-        cardElement.setAttribute("id", "active")
-    } else {
-        cardElement.setAttribute("id", "")
-    }
-}
 
 function Book(title, author, pages, status) {
     this.id = Date.now(),
@@ -75,11 +63,29 @@ function insertCards() {
                                 <label>Have you read it?</label>
                                 <input id="${book.id}" onchange="setStatus(myLibrary[${index}], this.checked)" type="checkbox" ${book.status ? "checked" : ""}>
                             </div>
-                            <button>Remove</button>
+                            <button onclick="removeCard(${book.id})">Remove</button>
                         </div>
                     </div>`
         });
     };
     cardContainer.innerHTML = cards;
 }
-// make checkbox dynamic; style the card container;
+
+
+function setStatus(book, newStatus) {
+    book.status = newStatus;
+
+    let cardElement = document.getElementById(`${book.id}`).closest('div.card')
+
+    if (newStatus) {
+        cardElement.setAttribute("id", "active")
+    } else {
+        cardElement.setAttribute("id", "")
+    }
+}
+
+function removeCard(cardId) {
+    myLibrary = myLibrary.filter(book => book.id !== cardId);
+    insertCards();
+    console.log(myLibrary)
+}
