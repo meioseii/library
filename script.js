@@ -27,6 +27,14 @@ addBook.addEventListener('click', () => {
 
 function setStatus(book, newStatus) {
     book.status = newStatus;
+
+    let cardElement = document.getElementById(`${book.id}`).closest('div.card')
+
+    if (newStatus) {
+        cardElement.setAttribute("id", "active")
+    } else {
+        cardElement.setAttribute("id", "")
+    }
 }
 
 function Book(title, author, pages, status) {
@@ -52,7 +60,7 @@ function insertCards() {
     let cards = "";
     if (myLibrary) {
         myLibrary.forEach((book, index) => {
-            cards += `<div class="card" id="active">
+            cards += `<div class="card" id="${book.status ? "active" : ""}">
                         <div class="title">
                             <p>${book.title}</p>
                         </div>
